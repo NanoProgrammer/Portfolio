@@ -1,11 +1,83 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Counter from '../components/Counter.jsx';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home">
+  <section id="hero">
+    <h1>Websites that convert. Fast.</h1>
+    <p>I build fast, modern websites that help real businesses grow.</p>
+    <p><a href="/projects" class="btn">View Projects</a></p>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <ul>
+      <li>Landing pages</li>
+      <li>e-Commerce</li>
+      <li>Blogs & Content Sites</li>
+      <li>Custom web apps</li>
+    </ul>
+  </section>
+
+  <section id="featured">
+    <h2>Featured Projects</h2>
+    <ul>
+      <li>
+        <strong>Project One</strong> – Built with Astro and React
+      </li>
+      <li>
+        <strong>Project Two</strong> – Fast static site with CMS
+      </li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h2>Why Work With Me</h2>
+    <p>
+      Reliable and results-oriented. I focus on building clean, responsive sites
+      that convert.
+    </p>
+  </section>
+
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <blockquote>
+      "Delivered exactly what I needed. Super clear communication."
+    </blockquote>
+  </section>
+
+  <section id="contact">
+    <h2>Have an idea? Let's build it.</h2>
+    <p>
+      <a href="/contact" class="btn">Get in touch</a>
+    </p>
+    <Counter client:load />
+  </section>
 </Layout>
+
+<style>
+  section {
+    margin-bottom: 3rem;
+  }
+  h1 {
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.25rem;
+  }
+  .btn:hover {
+    opacity: 0.9;
+  }
+</style>

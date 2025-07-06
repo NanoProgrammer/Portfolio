@@ -1,0 +1,61 @@
+---
+const navItems = [
+  { name: 'About', href: '/#about' },
+  { name: 'Services', href: '/#services' },
+  { name: 'Portfolio', href: '/#portfolio' },
+  { name: 'Contact', href: '/#contact' },
+]
+---
+
+<header class="sticky top-0 z-50 w-full bg-background/70 backdrop-blur-sm border-b border-border/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+    <a href="/" class="text-foreground text-lg font-bold tracking-tight">
+      I Build You a Site
+    </a>
+
+    <!-- Desktop navigation -->
+    <nav class="hidden md:flex gap-6 text-sm text-muted-foreground">
+      {navItems.map(({ name, href }) => (
+        <a
+          href={href}
+          class="relative group transition-colors hover:text-accent"
+        >
+          {name}
+          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      ))}
+    </nav>
+
+    <!-- Desktop CTA -->
+    <a href="/#contact" class="hidden md:inline-block rounded-xl px-4 py-2 text-sm font-medium bg-accent text-accent-foreground hover:scale-105 transition-transform">
+      Get a website
+    </a>
+
+    <!-- Mobile toggle -->
+    <button id="menu-toggle" class="md:hidden text-foreground" aria-label="Toggle navigation">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu (hidden by default) -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-background px-4 pb-4 space-y-3">
+    {navItems.map(({ name, href }) => (
+      <a href={href} class="block text-foreground hover:text-accent transition-colors">
+        {name}
+      </a>
+    ))}
+    <a href="/#contact" class="block mt-2 rounded-xl px-4 py-2 text-sm font-medium text-center bg-accent text-accent-foreground">
+      Get a website
+    </a>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    toggle?.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+    });
+  </script>
+</header>

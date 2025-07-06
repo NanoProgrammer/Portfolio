@@ -1,0 +1,40 @@
+---
+const stack = [
+  { label: 'Astro', desc: 'Modern static site framework for speed and simplicity.' },
+  { label: 'Next.js', desc: 'Fullstack React with SSR, API routes, and scalability.' },
+  { label: 'React', desc: 'Component-based UI engine for interactivity and logic.' },
+  { label: 'Tailwind CSS', desc: 'Utility-first CSS for clean, consistent design.' },
+  { label: 'Framer Motion', desc: 'Smooth animations and transitions in React.' },
+  { label: 'GSAP', desc: 'Advanced animations for visually dynamic interfaces.' },
+  { label: 'Chart.js', desc: 'Clean and responsive data visualizations.' },
+  { label: 'Three.js', desc: '3D graphics and interactive scenes on the web.' },
+  { label: 'NestJS', desc: 'Type-safe, modular backend framework for Node.js.' },
+  { label: 'Express.js', desc: 'Minimal backend server for custom APIs.' },
+  { label: 'Node.js', desc: 'JavaScript runtime for scalable backend services.' },
+  { label: 'Nodemailer', desc: 'Secure transactional email delivery from your own servers.' },
+  { label: 'Stripe', desc: 'Payments and subscriptions made simple and secure.' },
+  { label: 'Google Analytics', desc: 'Track and analyze real user behavior.' },
+  { label: 'Vercel & Netlify', desc: 'Modern hosting with built-in CI/CD.' },
+  { label: 'Cloudflare', desc: 'DNS, CDN, and security for global traffic.' },
+]
+---
+
+<section id="stack" class="py-24 px-6 bg-background text-foreground">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+      Tech Stack & Tools
+    </h2>
+    <p class="text-muted-foreground max-w-2xl mx-auto mb-12 text-sm">
+      I don’t use trendy tools — I use the ones that deliver results. Here’s what I work with depending on the project.
+    </p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-left text-sm">
+      {stack.map(({ label, desc }) => (
+        <div class="group p-4 rounded-xl border border-border bg-card hover:bg-muted transition-colors shadow-sm">
+          <h3 class="text-base font-semibold text-foreground">{label}</h3>
+          <p class="text-xs text-muted-foreground mt-1">{desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

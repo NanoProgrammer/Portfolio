@@ -1,0 +1,53 @@
+---
+const faqs = [
+  {
+    q: "How long does a website take?",
+    a: "Most projects are completed within 1–2 weeks. If your content is ready and feedback is fast, we move even faster."
+  },
+  {
+    q: "What do you need from me to start?",
+    a: "Usually: your logo, brand colors (if you have them), a short description of your business, and any content you want included."
+  },
+  {
+    q: "Can I request changes after launch?",
+    a: "Absolutely. Each package includes revisions, and I offer optional update/support plans if you need long-term tweaks."
+  },
+  {
+    q: "What if I don’t like the first version?",
+    a: "You’ll see a live homepage preview before development — so you can approve the style early and avoid surprises later."
+  },
+  {
+    q: "Do you offer SEO or analytics?",
+    a: "Yes. Every site includes basic SEO structure and Google Analytics setup — no extra charge."
+  },
+]
+---
+
+<section id="faq" class="relative overflow-hidden py-24 px-6 bg-background text-foreground">
+  <!-- Decorative stars background -->
+  <div class="absolute inset-0 pointer-events-none opacity-10 bg-[url('/assets/stars.svg')] bg-cover bg-center"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-muted-foreground text-sm mt-2 max-w-2xl mx-auto">
+        A few common things clients ask before we start working together.
+      </p>
+    </div>
+
+    <div class="grid gap-8">
+      {faqs.map(({ q, a }, i) => (
+        <div
+          class={`rounded-xl p-6 border border-border bg-card hover:bg-muted/40 transition duration-300 ${
+            i % 2 === 0 ? 'shadow-sm' : 'shadow-md'
+          }`}
+        >
+          <h3 class="text-lg font-semibold">{q}</h3>
+          <p class="mt-2 text-sm text-muted-foreground">{a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

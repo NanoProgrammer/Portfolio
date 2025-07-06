@@ -1,0 +1,19 @@
+---
+import PricingAndAddons from "./PricingCard"
+
+
+const pageTitle = "Website Pricing & Add-ons"
+const pageDescription = "Simple pricing, flexible add-ons, and no hidden fees. See what you get and how much it costs."
+---
+
+  
+
+  <section id="pricing" class="py-24 px-6 bg-background text-foreground">
+    <div class="max-w-6xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Website Pricing</h1>
+      <p class="text-muted-foreground max-w-xl mx-auto mb-12">
+        Clear, honest pricing for modern websites — tailored for small businesses and solopreneurs in Canada.
+      </p>
+      <PricingAndAddons  client:only/>
+    </div>
+  </section>

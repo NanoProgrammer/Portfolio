@@ -1,83 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Counter from '../components/Counter.jsx';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import Process from '../components/Process.astro';
+import Pricing from '../components/Pricing.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import Stack from '../components/Stack.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Availability from '../components/Availability.astro';
+import Header from '../components/Header.astro';
+
+
 ---
 
-<Layout title="Home">
-  <section id="hero">
-    <h1>Websites that convert. Fast.</h1>
-    <p>I build fast, modern websites that help real businesses grow.</p>
-    <p><a href="/projects" class="btn">View Projects</a></p>
-  </section>
+<Layout title="Web Design for Local Businesses | Santiago Gonzalez"
+description="Modern landing pages, contact forms, SEO setup, and analytics for local businesses and professionals."
+image="/images/og-image.png"
+url="https://yourdomain.com">
+<Header />
+<Hero />
+<About />
+<Services />
+<Process />
+<Pricing />
+<Testimonials />
+<Stack />
+<FAQ />
+<Availability />
+<CallToAction />
+<Portfolio />
+<Contact />
+<Footer />
 
-  <section id="services">
-    <h2>Services</h2>
-    <ul>
-      <li>Landing pages</li>
-      <li>e-Commerce</li>
-      <li>Blogs & Content Sites</li>
-      <li>Custom web apps</li>
-    </ul>
-  </section>
-
-  <section id="featured">
-    <h2>Featured Projects</h2>
-    <ul>
-      <li>
-        <strong>Project One</strong> – Built with Astro and React
-      </li>
-      <li>
-        <strong>Project Two</strong> – Fast static site with CMS
-      </li>
-    </ul>
-  </section>
-
-  <section id="about">
-    <h2>Why Work With Me</h2>
-    <p>
-      Reliable and results-oriented. I focus on building clean, responsive sites
-      that convert.
-    </p>
-  </section>
-
-  <section id="testimonials">
-    <h2>Testimonials</h2>
-    <blockquote>
-      "Delivered exactly what I needed. Super clear communication."
-    </blockquote>
-  </section>
-
-  <section id="contact">
-    <h2>Have an idea? Let's build it.</h2>
-    <p>
-      <a href="/contact" class="btn">Get in touch</a>
-    </p>
-    <Counter client:load />
-  </section>
 </Layout>
-
-<style>
-  section {
-    margin-bottom: 3rem;
-  }
-  h1 {
-    font-size: 2.25rem;
-    margin-bottom: 0.5rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-  }
-  .btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: #2563eb;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 0.25rem;
-  }
-  .btn:hover {
-    opacity: 0.9;
-  }
-</style>

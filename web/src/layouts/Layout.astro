@@ -1,63 +1,47 @@
 ---
-const { title = 'Portfolio' } = Astro.props;
+const {
+  title = "Freelance Portfolio | Web Development for Local Businesses",
+  description = "I build fast, modern websites with basic SEO, contact forms, and analytics for local businesses.",
+  image = "/images/og-image.png", // Replace with your OG image
+  url = "https://yourdomain.com",  // Replace with your real domain
+  lang = "en"
+} = Astro.props;
+
+import "../styles/global.css";
 ---
-<!doctype html>
-<html lang="en">
+
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={url} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={url} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon-ib.png" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
   </head>
+
   <body>
-    <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact</a>
-      </nav>
-    </header>
-    <main>
-      <slot />
-    </main>
+    <slot />
   </body>
 </html>
-
-<style>
-  body {
-    margin: 0;
-    font-family: system-ui, sans-serif;
-    color: #111827;
-  }
-
-  nav {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    background: #2563eb;
-  }
-
-  nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  nav a:hover {
-    text-decoration: underline;
-  }
-
-  main {
-    padding: 2rem 1rem;
-    animation: fade-in 0.5s ease-in;
-    max-width: 64rem;
-    margin: auto;
-  }
-
-  @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-</style>

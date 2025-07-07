@@ -1,26 +1,20 @@
 ---
+import Layout from "../../layouts/Layout.astro";
 ---
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Thanks for reaching out!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex" />
-  </head>
-  <body class="bg-background text-white flex items-center justify-center min-h-screen px-6">
-    <div class="max-w-xl text-center animate-fade-up animate-duration-700">
-      <h1 class="text-5xl font-extrabold tracking-tight mb-6">Thanks for reaching out! 👋</h1>
-      <p class="text-lg text-muted-foreground mb-8">
-        I appreciate your message. I’ll review it and get back to you as soon as possible.  
-        <br class="hidden sm:block" />
-        If it’s urgent, feel free to email me directly.
-      </p>
-      <a
-        href="/"
-        class="inline-block bg-accent text-accent-foreground px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform"
-      >
-        ← Back to Home
-      </a>
-    </div>
-  </body>
-</html>
+
+<Layout>
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+    <h1 class="text-5xl font-extrabold tracking-tight mb-6">Thanks for reaching out! 👋</h1>
+    <p class="text-lg text-muted-foreground mb-8 max-w-xl">
+      I appreciate your message. I’ll review it and get back to you as soon as possible.
+      <br class="hidden sm:block" />
+      If it’s urgent, feel free to email me directly.
+    </p>
+    <a
+      href="/"
+      class="inline-block bg-accent text-accent-foreground px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform"
+    >
+      ← Back to Home
+    </a>
+  </section>
+</Layout>

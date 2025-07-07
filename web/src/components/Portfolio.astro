@@ -1,31 +1,75 @@
 ---
+import PortfolioItem from '@/components/PortfolioItem.tsx'
 ---
+
 <section id="portfolio" class="relative py-24 px-6 bg-muted text-foreground isolate overflow-hidden">
-  <!-- Soft radial background -->
   <div class="absolute inset-0 -z-10 opacity-10 bg-[radial-gradient(ellipse_at_center,_rgba(0,0,0,0.2),_transparent_60%)] pointer-events-none" />
 
   <div class="max-w-6xl mx-auto text-center animate-fade-up animate-duration-700">
     <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Work Samples</h2>
     <p class="text-muted-foreground max-w-2xl mx-auto mb-12">A few real-world projects I’ve designed and built — clean, functional, and tailored to small businesses.</p>
 
-    <div class="grid md:grid-cols-2 gap-8 text-left">
-      <!-- Card 1 -->
-      <div class="rounded-2xl bg-card border border-border shadow hover:shadow-xl transition overflow-hidden group">
-        <img src="/images/demo1.png" alt="Cafe Website Demo" class="w-full h-60 object-cover group-hover:scale-[1.02] transition-transform" />
-        <div class="p-6 space-y-2">
-          <h3 class="text-2xl font-semibold text-foreground">Coffee Shop Landing</h3>
-          <p class="text-muted-foreground text-sm">One-pager for a local café. Includes contact form, photos, smooth scroll, and map integration.</p>
-        </div>
-      </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
 
-      <!-- Card 2 -->
-      <div class="rounded-2xl bg-card border border-border shadow hover:shadow-xl transition overflow-hidden group">
-        <img src="/images/demo2.png" alt="Dental Clinic Website" class="w-full h-60 object-cover group-hover:scale-[1.02] transition-transform" />
-        <div class="p-6 space-y-2">
-          <h3 class="text-2xl font-semibold text-foreground">Dental Clinic Site</h3>
-          <p class="text-muted-foreground text-sm">Clean, responsive layout for a clinic. Features services, call-to-action buttons, and appointment links.</p>
-        </div>
-      </div>
+      <!-- Proyecto 1: Artilate -->
+      <PortfolioItem
+        title="Artilate"
+        description="E-commerce site for a premium artesanal chocolate brand using ethically sourced of cacao."
+        imageUrl="/images/artilate.avif"
+        link="https://artilate.com"
+        details={`Artilate is a premium chocolate brand crafted in Alberta using ethically sourced Colombian cacao.
+
+I designed and developed the full website experience:
+
+• Custom UI with Astro, React, Tailwind CSS, and shadcn/ui
+• Product catalog, image gallery, and an elegant About Us section
+• Stripe integration for secure online payments
+• Cloudflare security layer and CDN setup
+• Dynamic SEO for each page and Open Graph optimization
+• Weekly analytics show over 100+ page views consistently
+
+This was a complete design-to-deploy project including brand identity and logo.`}
+        client:visible
+      />
+
+      <!-- Proyecto 2: Coffee Shop -->
+      <PortfolioItem
+        title="Coffee Shop Demo"
+        description="Landing page design for a local café. Fully responsive and minimal."
+        imageUrl="/images/coffee-demo.avif"
+        link="https://zippy-griffin-4f323c.netlify.app/"
+        details={`A stylish and simple landing page for a fictional local coffee shop.
+
+• Focused on brand personality and cozy atmosphere
+• Includes hero section, menu showcase, and call-to-action
+• Smooth scrolling and clean layout for easy navigation
+
+Tech stack:
+Astro + Tailwind CSS
+
+Perfect for cafés, bakeries, or small local businesses looking for a modern online presence.`}
+        client:visible
+      />
+
+      <!-- Proyecto 3: Healthcare -->
+      <PortfolioItem
+        title="Healthcare Landing"
+        description="Clean and accessible site for a healthcare service."
+        imageUrl="/images/healthcare-demo.avif"
+        link="https://cerulean-kleicha-ab1f51.netlify.app/"
+        details={`A modern and accessible landing page designed for a fictional healthcare provider.
+
+• Strong focus on accessibility, contrast, and readability
+• Clear call-to-action with trust-enhancing layout
+• Ideal structure for clinics, wellness platforms, or medical services
+
+Tech stack:
+Astro + Tailwind CSS + shadcn/ui
+
+Built to inspire trust and drive conversions for health-related businesses.`}
+        client:visible
+      />
+
     </div>
   </div>
 </section>

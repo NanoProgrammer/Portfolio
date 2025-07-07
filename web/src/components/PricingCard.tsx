@@ -54,7 +54,7 @@ export function PricingCard({
           ))}
         </ul>
         <Button size="lg" className="w-full mt-2">
-        <a href="#contact">{cta}</a>
+          <a href="#contact">{cta}</a>
         </Button>
       </CardContent>
     </Card>
@@ -66,10 +66,10 @@ export default function PricingAndAddons() {
     {
       title: "Informational Landing",
       price: "$350+ CAD",
-      description: "Great for launching a simple one-page presence online.",
+      description: "Clean one-page site to present your services and contact info clearly.",
       features: [
-        "1 custom page",
-        "Click-to-call and email buttons",
+        "3 custom sections (e.g. Hero, Services, Contact)",
+        "Clickable email or phone CTA",
         "Mobile-first layout",
         "Delivered in 5–7 days",
       ],
@@ -77,13 +77,14 @@ export default function PricingAndAddons() {
     },
     {
       title: "Lead Gen Landing",
-      price: "$600–950 CAD",
+      price: "$600–1000 CAD",
       description: "Form-enabled pages to capture leads and emails. Perfect for service businesses.",
       features: [
         "Contact form + validation",
         "Store or forward to email",
         "Basic SEO & analytics",
-        "Optional dashboard UI",
+        "Up to 6 sections (Hero, About, Services, Form)",
+        "Delivered under 10 days",
       ],
       cta: "Book This",
       featured: true,
@@ -93,10 +94,11 @@ export default function PricingAndAddons() {
       price: "$1000–2500 CAD",
       description: "Sell your products with a fast, modern online store — powered by Stripe or custom checkout.",
       features: [
+        "Landing page with product showcase",
         "Product pages",
         "Categories + filters",
         "Stripe integration",
-        "CMS or admin panel",
+        "CMS panel",
       ],
       cta: "Request Quote",
     },
@@ -105,25 +107,32 @@ export default function PricingAndAddons() {
   const addons = [
     {
       title: "Domain & Hosting Setup",
-      price: "+$50–$100",
-      description: "I'll configure your domain and deploy your site — no setup stress.",
+      price: "+$50–$100/yr",
+      description:
+        "I’ll help you set up your domain and launch your website — no tech headaches for you.",
     },
     {
       title: "Basic Logo Design",
-      price: "+$100–$200",
-      description: "Clean logo design to give your brand a consistent identity.",
+      price: "+$100–$250",
+      description:
+        "Need a simple, clean logo? I’ll create one that fits your brand and looks great everywhere.",
+    },
+    
+    {
+      title: "Cloudflare Security Setup",
+      price: "$100–$200",
+      description:
+        "I’ll secure your site with SSL, firewall, and performance boost using Cloudflare — so it stays fast and protected 24/7.",
     },
     {
-      title: "Custom Email Setup",
-      price: "+$30–$50",
-      description: "Set up contact@yourdomain.com with Gmail, Zoho, or other providers.",
-    },
-    {
-      title: "Admin Dashboard",
-      price: "from $200",
-      description: "Private UI to view leads or manage content without touching code.",
+      title: "Client-Friendly Blog (SEO Boost)",
+      price: "$250–$400",
+      description:
+        "Want to show up on Google more often? I’ll add a blog where you can publish your own posts anytime — no code needed. Great for SEO off-page strategy and link building (dofollow links supported).",
     },
   ]
+  
+  
 
   const bonuses = [
     "✅ Free favicon included",

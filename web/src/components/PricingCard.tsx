@@ -95,7 +95,7 @@ export default function PricingAndAddons() {
       featured: true,
     },
     {
-      title: "eCommerce Website",
+      title: "Basic Online Store",
       price: "$1400–2100 CAD",
       description: "Sell your products with a fast, modern online store — powered by Stripe or custom checkout.",
       features: [

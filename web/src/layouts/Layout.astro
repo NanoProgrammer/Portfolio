@@ -1,57 +1,119 @@
 ---
+import '../styles/global.css';
 const {
-  title = "Freelance Portfolio | Web Development for Local Businesses",
-  description = "I build fast, modern websites with basic SEO, contact forms, and analytics for local businesses.",
-  image = "/images/og-image.png", // Replace with your OG image
-  url = "https://yourdomain.com",  // Replace with your real domain
-  lang = "en"
+  title = "Websites built to sell | Alberta Web Developer",
+  description = "I design & build fast, conversion-focused websites for Canadian small businesses. Calgary & Alberta — remote-friendly across Canada.",
+  image = "/images/og-image.png",          // TODO: usa una URL ABSOLUTA
+  url = "https://ibuiltyouawebsite.netlify.app",          // TODO
+  lang = "en-CA",
+  siteName = "Santiago — Web Developer",
 } = Astro.props;
 
-import "../styles/global.css";
+// util: absoluta para OG/canonical
+const abs = (p: string) => p?.startsWith("http") ? p : new URL(p, url).toString();
+const canonical = abs(Astro.url?.pathname || "/");
+const ogImage   = abs(image);
+
+// JSON-LD
+const jsonLdWebsite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": siteName,
+  "url": url,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": `${url}/search?q={query}`,
+    "query-input": "required name=query"
+  }
+};
+
+const jsonLdPersonOrOrg = {
+  "@context": "https://schema.org",
+  "@type": "Organization",                            
+  "name": "Santiago",
+  "jobTitle": "Web Developer",
+  "url": url,
+  "image": ogImage,
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "AB",
+    "addressCountry": "CA"
+  },
+  "areaServed": ["Alberta", "Canada", "North America"],
+  "sameAs": [
+    "https://www.linkedin.com/in/santiago-gonzalez-95b093373",
+    "https://github.com/NanoProgrammer"
+  ]
+};
+
+const jsonLdLocalBusiness = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": siteName,
+  "url": url,
+  "image": ogImage,
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "AB",
+    "addressCountry": "CA"
+  },
+};
 ---
 
 <html lang={lang}>
   <head>
-
-    
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#050818" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href={url} />
+    <!-- Canonical absoluto -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- Hreflang (si solo tienes inglés de Canadá, deja en-CA; añade en si tienes 2 variantes) -->
+   <link rel="alternate" hreflang="en-CA" href={canonical} />
+<!-- si tienes versión global -->
+<link rel="alternate" hreflang="x-default" href={url} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={url} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_CA" />
 
-    <!-- Twitter Card -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={ogImage} />
 
-    <!-- Favicon -->
+    <!-- Icons -->
     <link rel="icon" href="/favicon-ib.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Ej: <link rel="preload" as="font" href="/fonts/inter-var.woff2" type="font/woff2" crossorigin /> -->
 
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css" />
 
+    <!-- Analytics (async + preconnect) -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM05H813QX"></script>
-<script set:html={`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QM05H813QX');
-`}></script>
+    <script set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QM05H813QX',{anonymize_ip:true});`}></script>
 
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdWebsite)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdPersonOrOrg)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdLocalBusiness)}></script>
   </head>
-
   <body>
     <slot />
   </body>

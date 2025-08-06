@@ -11,16 +11,18 @@ export default function HeroAnimated() {
       {/* Noise texture overlay */}
       <div className="absolute inset-0 -z-10 bg-[url('/assets/3px-tile.png')] opacity-45 mix-blend-soft-light pointer-events-none" />
 
-      {/* Optional floating shape accents */}
+      {/* Floating shape accents */}
       <div className="absolute top-0 left-0 w-40 h-40 bg-primary/10 rounded-full blur-2xl animate-pulse -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-52 h-52 bg-secondary/10 rounded-full blur-2xl animate-spin-slow translate-x-1/3 translate-y-1/3" />
 
       <div className="mx-auto max-w-5xl text-center animate-fade-up animate-duration-700">
         <h1 className="text-5xl md:text-6xl font-extrabold text-foreground tracking-tight leading-tight">
-        Built to grow with your business
+          Websites that win you more customers.
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-          I’m Santiago — a web developer in Alberta. I build sites that look sharp, load fast, and help real businesses grow online.
+          I’m Santiago — a Canadian web developer helping small businesses across Alberta & Canada 
+          stand out online. I build websites that load lightning‑fast, look world‑class, and are 
+          designed to bring you more clients.
         </p>
 
         <div className="mt-6 flex justify-center gap-4">
@@ -28,15 +30,19 @@ export default function HeroAnimated() {
             href="/#contact"
             className="rounded-xl bg-accent text-accent-foreground px-6 py-3 text-sm font-medium shadow hover:scale-105 transition-transform"
           >
-            Let’s build yours
+            Get a free quote
           </a>
           <a
             href="/portfolio"
-            className="text-sm text-muted-foreground underline underline-offset-4 text-center content-center hover:text-foreground"
+            className="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
           >
             See my work
           </a>
         </div>
+
+        <p className="mt-6 text-xs text-muted-foreground">
+          Trusted by local businesses across Alberta & Canada
+        </p>
       </div>
     </section>
   )

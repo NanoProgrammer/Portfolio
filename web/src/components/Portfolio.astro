@@ -2,71 +2,94 @@
 import PortfolioItem from '@/components/PortfolioItem.tsx'
 ---
 
-<section id="portfolio" class="relative py-24 px-6 bg-muted text-foreground isolate overflow-hidden">
-  <div class="absolute inset-0 -z-10 opacity-10 bg-[radial-gradient(ellipse_at_center,_rgba(0,0,0,0.2),_transparent_60%)] pointer-events-none" />
+<section id="availability-portfolio" class="relative py-24 px-6 text-foreground isolate overflow-hidden">
+  <!-- Fondo unificado -->
+  <div class="absolute inset-0 -z-30 bg-[#050818]" />
+  <div class="absolute inset-0 -z-20 bg-gradient-to-br from-blue-500/5 via-transparent to-accent/10 blur-3xl" />
+  <div class="absolute inset-0 -z-10 opacity-[0.04] bg-[url('/assets/3px-tile.png')] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]" />
 
+  <!-- Availability -->
+  <div class="max-w-3xl mx-auto text-center mb-60">
+    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+      Serving Alberta —<br class="md:hidden" /> and Building for the World
+    </h2>
+
+    <p class="text-muted-foreground text-sm md:text-base leading-relaxed max-w-xl mx-auto">
+      Based in Canada 🇨🇦 — I work with small businesses across North America and collaborate remotely with clients worldwide.
+    </p>
+
+    <div class="mt-8 flex justify-center flex-wrap gap-3 text-sm text-foreground">
+      <span class="bg-card border border-border px-4 py-2 rounded-full">🌎 Remote-friendly</span>
+      <span class="bg-card border border-border px-4 py-2 rounded-full">📍 Alberta, Canada</span>
+      <span class="bg-card border border-border px-4 py-2 rounded-full">🕐 Flexible timezone</span>
+    </div>
+  </div>
+
+  <!-- Portfolio -->
   <div class="max-w-6xl mx-auto text-center animate-fade-up animate-duration-700">
     <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Work Samples</h2>
-    <p class="text-muted-foreground max-w-2xl mx-auto mb-12">A few real-world projects I’ve designed and built — clean, functional, and tailored to small businesses.</p>
+    <p class="text-muted-foreground max-w-2xl mx-auto mb-12">
+      Real projects I’ve designed and built — functional, high‑converting, and tailored to Canadian businesses.
+    </p>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+      <PortfolioItem
+        title="GrillsGuard"
+        description="High‑converting landing page for a professional BBQ cleaning service in Alberta."
+        imageUrl="/images/grillsguard.avif"
+        link="https://grillsguard.com"
+        details={`A bold and persuasive landing page designed for a BBQ cleaning company in Calgary.
 
+• Conversion-focused hero section with strong CTA
+• Before & After photo showcase for credibility
+• Service highlights with trust signals
+• Integrated contact form for direct bookings
+• SEO-friendly structure for local search
+
+Built to help GrillsGuard attract and convert local homeowners into loyal clients.`}
+        client:visible
+      />
+      
       <!-- Proyecto 1: Artilate -->
       <PortfolioItem
         title="Artilate"
-        description="E-commerce site for a premium artesanal chocolate brand using ethically sourced of cacao."
+        description="E‑commerce platform for a premium artisan chocolate brand using ethically sourced Colombian cacao."
         imageUrl="/images/artilate.avif"
         link="https://artilate.com"
         details={`Artilate is a premium chocolate brand crafted in Alberta using ethically sourced Colombian cacao.
 
-I designed and developed the full website experience:
+I designed and developed the full e‑commerce experience:
 
 • Custom UI with Astro, React, Tailwind CSS, and shadcn/ui
-• Product catalog, image gallery, and an elegant About Us section
+• Product catalog, image gallery, and engaging About Us
 • Stripe integration for secure online payments
 • Cloudflare security layer and CDN setup
-• Dynamic SEO for each page and Open Graph optimization
-• Weekly analytics show over 100+ page views consistently
+• Dynamic SEO for each product and Open Graph optimization
+• Consistent traffic growth and repeat customers
 
 This was a complete design-to-deploy project including brand identity and logo.`}
         client:visible
       />
 
-      <!-- Proyecto 2: Coffee Shop -->
+      <!-- Proyecto 2: GrillsGuard -->
+    
+
+      <!-- Proyecto 3: Appointment SaaS -->
       <PortfolioItem
-        title="Coffee Shop Demo"
-        description="Landing page design for a local café. Fully responsive and minimal."
-        imageUrl="/images/coffee-demo.avif"
-        link="https://zippy-griffin-4f323c.netlify.app/"
-        details={`A stylish and simple landing page for a fictional local coffee shop.
+        title="Appointment Filling SaaS"
+        description="Web‑based SaaS platform to help businesses fill last‑minute appointment cancellations."
+        imageUrl="/images/saas.avif"
+        link="https://gaplets.com"
+        details={`A custom SaaS built from scratch to solve a real scheduling problem for service businesses.
 
-• Focused on brand personality and cozy atmosphere
-• Includes hero section, menu showcase, and call-to-action
-• Smooth scrolling and clean layout for easy navigation
+• Multi‑provider integrations (Square, Acuity, Google)
+• OAuth2 authentication and secure token management
+• Real-time cancellation detection and automated notifications
+• Role-based access with tiered subscription plans via Stripe
+• Clean dashboard built with Next.js + Tailwind CSS
+• Backend with NestJS, Prisma, Redis, BullMQ for queue processing
 
-Tech stack:
-Astro + Tailwind CSS
-
-Perfect for cafés, bakeries, or small local businesses looking for a modern online presence.`}
-        client:visible
-      />
-
-      <!-- Proyecto 3: Healthcare -->
-      <PortfolioItem
-        title="Healthcare Landing"
-        description="Clean and accessible site for a healthcare service."
-        imageUrl="/images/healthcare-demo.avif"
-        link="https://cerulean-kleicha-ab1f51.netlify.app/"
-        details={`A modern and accessible landing page designed for a fictional healthcare provider.
-
-• Strong focus on accessibility, contrast, and readability
-• Clear call-to-action with trust-enhancing layout
-• Ideal structure for clinics, wellness platforms, or medical services
-
-Tech stack:
-Astro + Tailwind CSS + shadcn/ui
-
-Built to inspire trust and drive conversions for health-related businesses.`}
+Delivered as a full end‑to‑end MVP ready for scaling.`}
         client:visible
       />
 

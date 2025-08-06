@@ -6,7 +6,7 @@ const {
   image = "/images/og-image.png",          // TODO: usa una URL ABSOLUTA
   url = "https://ibuiltyouawebsite.netlify.app",          // TODO
   lang = "en-CA",
-  siteName = "Santiago — Web Developer",
+  siteName = "I Build A Websites — Web Developer",
 } = Astro.props;
 
 // util: absoluta para OG/canonical
@@ -74,8 +74,6 @@ const jsonLdLocalBusiness = {
 
     <!-- Hreflang (si solo tienes inglés de Canadá, deja en-CA; añade en si tienes 2 variantes) -->
    <link rel="alternate" hreflang="en-CA" href={canonical} />
-<!-- si tienes versión global -->
-<link rel="alternate" hreflang="x-default" href={url} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -100,9 +98,6 @@ const jsonLdLocalBusiness = {
     <!-- Performance hints -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Ej: <link rel="preload" as="font" href="/fonts/inter-var.woff2" type="font/woff2" crossorigin /> -->
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css" />
 
     <!-- Analytics (async + preconnect) -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
